@@ -16,14 +16,16 @@ document.getElementById("summarize").addEventListener("click", async () => {
 });
 
 async function summarizeText(text) {
+  const { OPENAI_API_KEY } = await chrome.storage.local.get("OPENAI_API_KEY");
+
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      Authorization: `Bearer ${OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
-      model: "gpt-4",
+      model: "gpt-4o-mini",
       messages: [{ role: "user", content: `Summarize this: ${text}` }],
       max_tokens: 150,
     }),

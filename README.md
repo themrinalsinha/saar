@@ -19,6 +19,8 @@ Features:
 🚀 Installation:
 
 - Download and extract the repository.
+- Add the .env file to the root of the repository.
+  - OPENAI_API_KEY=your_openai_api_key
 - Open chrome://extensions/ and enable Developer Mode.
 - Click Load Unpacked and select the extracted folder.
 - Click the SAAR icon to summarize any webpage instantly!
