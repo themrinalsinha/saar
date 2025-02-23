@@ -6,12 +6,24 @@
   <title>SAAR | Summarize Webpage</title>
   <link rel="stylesheet" href="../styles/pico.min.css"/>
   <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <h2>SAAR</h2>
-  <button id="summarize">Summarize Page</button>
-  <div id="summary"></div>
+  <div class="header">
+    <h2>SAAR</h2>
+    <button id="settings-btn" class="icon-button">
+      <i class="fas fa-cog"></i>
+    </button>
+  </div>
+  <div id="api-setup" style="display: none;">
+    <input type="password" id="api-key" placeholder="Enter OpenAI API Key">
+    <button id="save-api-key">Save API Key</button>
+  </div>
+  <div id="main-content">
+    <button id="summarize">Summarize Page</button>
+    <div id="summary"></div>
+  </div>
   <script src="marked.min.js"></script>
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>

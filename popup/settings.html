@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAAR Settings</title>
+  <link rel="stylesheet" href="../styles/pico.min.css"/>
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="header">
+    <h2>Settings</h2>
+    <button id="back-btn" class="icon-button">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+  </div>
+  <div class="settings-content">
+    <div class="setting-item">
+      <label for="api-key-display">API Key</label>
+      <input type="password" id="api-key-display">
+    </div>
+    <div class="setting-item">
+      <label for="default-model">Model</label>
+      <select id="default-model">
+        <option value="gpt-4o">GPT-4o</option>
+        <option value="gpt-4">GPT-4</option>
+        <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+      </select>
+    </div>
+    <button id="save-settings">Save Settings</button>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html> 
