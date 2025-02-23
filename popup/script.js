@@ -9,7 +9,7 @@ document.getElementById("summarize").addEventListener("click", async () => {
       if (result && result[0] && result[0].result) {
         const text = result[0].result;
         const summary = await summarizeText(text);
-        document.getElementById("summary").innerText = summary;
+        document.getElementById("summary").innerHTML = marked.parse(summary);
       }
     }
   );
@@ -26,7 +26,12 @@ async function summarizeText(text) {
     },
     body: JSON.stringify({
       model: "gpt-4o-mini",
-      messages: [{ role: "user", content: `Summarize this: ${text}` }],
+      messages: [
+        {
+          role: "user",
+          content: `Summarize this: ${text}`
+        }
+      ],
       max_tokens: 150,
     }),
   });
@@ -35,5 +40,5 @@ async function summarizeText(text) {
 }
 
 function extractText() {
-  return document.body.innerText.substring(0, 5000);
+  return document.body.innerText.substring(0, 10000);
 }
